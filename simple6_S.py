@@ -1,0 +1,19 @@
+from sys import flags
+
+key = [0x00000017, 0x00000016, 0x0000001A, 0x0000001A, 0x00000019, 0x00000019, 0x00000019, 0x0000001A, 0x0000001B, 0x0000001C, 0x0000001E, 0x0000001E, 0x0000001D, 0x0000001E, 0x00000020, 0x00000020, 0x00000021, 0x00000020]
+arr = [0x00000080, 0x000000A9, 0x0000008E, 0x000000E1, 0x00000088, 0x000000BD, 0x000000D4, 0x000000A5, 0x00000088, 0x000000BF, 0x000000C6, 0x00000099, 0x00000076, 0x000000AB, 0x00000096, 0x000000AF, 0x00000012, 0x000000CB]
+flag = ''
+
+print(arr)
+for i in range(len(arr)):
+    arr[i] = (arr[i] + i) / 2
+    arr[i] = arr[i] + key[i] % 17
+
+for i in range(len(arr)):
+    arr[i] = int(arr[i]) 
+
+for i in range(len(arr)):
+    flag += chr(arr[i]) 
+
+print(arr)
+print(flag)
